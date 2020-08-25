@@ -22,3 +22,22 @@ ipc = invoke(ipcRenderer,ipcRenderer.invoke)
 
 ipc.app.quit(args1, args2)
 ```
+
+```
+import {ipcMain} from 'electron'
+import handle from 'fchain/handle'
+ipc = handle(ipcMain,ipcMain.handle)
+
+ipc.app.quit (args1, args2)->
+  console.log @ # event
+  console.log args1, args2
+```
+
+
+```
+import ipc from 'fchain/ipc_handle'
+```
+
+```
+import ipc from 'fchain/ipc_invoke'
+```
