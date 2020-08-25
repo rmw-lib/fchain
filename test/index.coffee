@@ -1,14 +1,14 @@
-import chain from '../src/index'
+import invoke from '../src/invoke'
 import test from 'tape'
 
-test 'chain', (t)=>
+test 'invoke', (t)=>
   class Ipc
     constructor:(@name)->
-    invoke:(channel, a, b)->
-      @name+"."+channel+"."+a+"."+b
+    invoke:(channel, args)->
+      @name+"."+channel+"."+args.join('.')
   ipc = new Ipc("me")
 
-  c = chain(ipc,ipc.invoke)
+  c = invoke(ipc,ipc.invoke)
   t.equal "me.hello.world.is.ok",c.hello.world("is","ok")
   t.end()
 
