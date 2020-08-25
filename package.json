@@ -6,7 +6,11 @@
   "license": "MulanPSL-2.0",
   "exports": {
     ".": "./lib/index.js",
-    "./": "./lib/"
+    "./": "./lib/",
+    "./handle": "./lib/handle.js",
+    "./invoke": "./lib/invoke.js",
+    "./ipc_handle": "./lib/ipc_handle.js",
+    "./ipc_invoke": "./lib/ipc_invoke.js"
   },
   "files": [
     "/lib"

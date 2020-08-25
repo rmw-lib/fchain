@@ -6,7 +6,7 @@ export default chain = (self, func, prefix="")=>
     {
       get:(_, name)=>
         chain(self, func, prefix+name+".")
-      apply:(target, _, next)=>
+      apply:(target, _, [next])=>
         func.call self, prefix[...-1], (event, args)->
           next.apply event, args
     }
